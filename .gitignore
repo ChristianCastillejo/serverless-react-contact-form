@@ -1,0 +1,5 @@
+node_modules/
+/serverless/secrets.json
+/serverless/.serverless
+/serverless/yarn.lock
+/lambda/package-lock.json

@@ -1,0 +1,31 @@
+{
+  "name": "serverless-react-contact-form",
+  "version": "0.1.0",
+  "description": "Serverless-React contact form integrating email, Slack, MS Teams and creating Trello tickets.",
+  "main": "index.js",
+  "scripts": {
+    "start": "sls offline start"
+  },
+  "keywords": [
+    "aws",
+    "aws-lambda",
+    "aws-ses",
+    "nodejs",
+    "no-dependencies",
+    "node-module"
+  ],
+  "author": "Christian Castillejo <christiancastillejo@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ChristianCastillejo/serverless-react-contact-form"
+  },
+  "devDependencies": {
+    "serverless-offline": "^3.33.0"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.437.0",
+    "https": "^1.0.0",
+    "request": "^2.88.0"
+  }
+}

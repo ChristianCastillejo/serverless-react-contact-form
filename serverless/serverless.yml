@@ -1,0 +1,38 @@
+service: serverless-react-contact-form
+
+custom:
+  secrets: ${file(secrets.json)}
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: ${self:custom.secrets.NODE_ENV}
+  region: eu-west-1
+  profile: ${self:custom.secrets.PROFILE}
+  environment: 
+    ENV: ${self:custom.secrets.ENV}
+    NODE_ENV: ${self:custom.secrets.NODE_ENV}
+    EMAIL: ${self:custom.secrets.EMAIL}
+    DOMAIN: ${self:custom.secrets.DOMAIN}
+    TEAMS_KEY: ${self:custom.secrets.TEAMS_KEY}
+    TRELLO_API_KEY: ${self:custom.secrets.TRELLO_API_KEY}
+    TRELLO_LIST_ID: ${self:custom.secrets.TRELLO_LIST_ID}
+    TRELLO_TOKEN: ${self:custom.secrets.TRELLO_TOKEN}
+    SLACK_PATH: ${self:custom.secrets.SLACK_PATH}
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "ses:SendEmail"
+      Resource: "*"
+
+functions:
+  send:
+    handler: index.send
+    events:
+      - http:
+          path: email/send
+          method: post
+          cors: true
+
+plugins:
+  - serverless-offline
