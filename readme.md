@@ -4,7 +4,7 @@
 This repo belongs to [this Medium.com post](https://medium.com/@ChristianCastillejo/how-to-build-a-serverless-react-contact-form-integrating-email-slack-ms-teams-and-creating-7fc8b0223f4b)
 to build a Serverless-React contact form integrating email, Slack, MS Teams and creating Trello tickets.
 
-You can follow the post to make you oun contact form. :)
+You can follow the post to make you own contact form. :)
 
 ## Technologies we are using:
 
